@@ -1,7 +1,7 @@
 ---
-title: Kotlin Infix Function
+title: Infix Function(중위함수)
 date: 2025-01-29 21:38:00 +09:00
-last_modified_at: 2025-01-29 21:38:00 +09:00
+last_modified_at: 2025-01-29 22:57:00 +09:00
 categories: [Programming, Kotlin]
 tags:
   [
@@ -9,7 +9,7 @@ tags:
     코틀린,
     Infix
   ]
-image: "/assets/img/title/kotlin-logo.png"
+image: "/assets/img/posts/infix-last-days.jpg"
 ---
 
 > 오늘은 infix notation에 대해 알아보자.
@@ -27,7 +27,7 @@ image: "/assets/img/title/kotlin-logo.png"
 * 반드시 하나의 파라미터를 가져야 한다.
 * 파라미터는 가변인자를 사용할 수 없으며, 기본값이 없어야 한다.
 
-### 사용 예시 1 - String 확장함수
+### 사용 예시 1 - 확장함수
 간단하게 String을 확장하여 같은 단어를 반복하여 출력하는 함수를 만들어보자.
 
 ```kotlin
@@ -43,43 +43,38 @@ Hello World!
 Hello World!
 ```
 
-### 사용 예시 2 - Builder DSL
-Builder 패턴도 DSL로 적용해보자.
+### 사용 예시 2 - 멤버함수
+Class 내에서 멤버 함수로 정의하게 되면 class 자체(this)가 dispatcher기 때문에 굳이 선언해줄 필요가 없다.
 
 ```kotlin
-class PrincessMaker(
-  private val name: String,
-  private val age: Int,
-) {
-
-  companion object {
-    infix fun build(block: Builder.() -> Unit) = Builder().apply(block).build()
-
-    class Builder {
-      var name: String = ""
-      var age: Int = 0
-
-      fun build() = PrincessMaker(name, age)
+class Assertion<T>(private val target: T) {
+  infix fun isEqualTo(other: T) {
+    if (target != other) {
+      throw AssertionError("Expected $target to be equal to $other")
     }
   }
 
-  override fun toString(): String {
-    return "PrincessMaker(name=$name, age=$age)"
+  infix fun isDifferentFrom(other: T) {
+    if (target == other) {
+      throw AssertionError("Expected $target to be different from $other")
+    }
   }
 }
 
-// 사용 예시
-PrincessMaker.build {
-    name = "Ariel"
-    age = 16
-  }.also { println(it) }
+val result = Assertion(5)
+result isEqualTo 4
+result isDifferentFrom 5
 ```
+
 ```
-PrincessMaker(name=Ariel, age=16)
+Exception in thread "main" java.lang.AssertionError: Expected 5 to be equal to 4 
+    at infixfunction.Assertion.isEqualTo(Assertion.kt:6)
+
+Exception in thread "main" java.lang.AssertionError: Expected 5 to be different from 5
+	at infixfunction.Assertion.isDifferentFrom(Assertion.kt:12)
 ```
 
 ## 참고
 
 * [https://kotlinlang.org/docs/functions.html#infix-notation](https://kotlinlang.org/docs/functions.html#infix-notation)
-* [https://velog.io/@cksgodl/kotlin-kotlin%EC%97%90%EC%84%9C%EC%9D%98-infix-%EB%B0%8F-Builder-%ED%8C%A8%ED%84%B4](https://velog.io/@cksgodl/kotlin-kotlin%EC%97%90%EC%84%9C%EC%9D%98-infix-%EB%B0%8F-Builder-%ED%8C%A8%ED%84%B4)
 * [소스코드](https://github.com/thomas783/kotlin-practice/tree/main/src/main/kotlin/infixfunction)
