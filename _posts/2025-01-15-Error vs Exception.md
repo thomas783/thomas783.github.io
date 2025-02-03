@@ -5,12 +5,12 @@ last_modified_at: 2025-01-19 01:49:00 +09:00
 categories: [Programming, Kotlin]
 tags:
   [
-    Kotlin,
+    kotlin,
     코틀린,
-    Error,
-    Exception,
-    Throwable,
-    Java,
+    error,
+    exception,
+    throwable,
+    java,
     자바,
   ]
 image: "/assets/img/title/kotlin-logo.png"

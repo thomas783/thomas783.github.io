@@ -5,9 +5,9 @@ last_modified_at: 2025-01-29 22:57:00 +09:00
 categories: [Programming, Kotlin]
 tags:
   [
-    Kotlin,
+    kotlin,
     코틀린,
-    Infix
+    infix
   ]
 image: "/assets/img/posts/infix-last-days.jpg"
 ---
