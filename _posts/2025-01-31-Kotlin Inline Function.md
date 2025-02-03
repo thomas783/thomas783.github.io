@@ -312,3 +312,8 @@ fun main() {
 ```
 
 일반적인 함수에서는 사용할 수 없고 오직 `inline` 함수 안에서만 reified를 사용할 수 있다는 것에 유의하자.
+
+## 참고
+
+* [https://kotlinlang.org/docs/inline-functions.html](https://kotlinlang.org/docs/inline-functions.html)
+* [소스코드](https://github.com/thomas783/kotlin-practice/tree/main/src/main/kotlin/inlinefunction)
