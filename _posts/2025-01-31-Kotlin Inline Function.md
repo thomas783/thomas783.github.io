@@ -12,7 +12,7 @@ tags:
     crossinline,
     reified
   ]
-image: "/assets/img/posts/inline-skate.jpg"
+image: "/assets/img/posts/card-capture.gif"
 ---
 
 > 오늘은 inline function에 대해 알아보자.
