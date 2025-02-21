@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: 숨참고 Deepdive # the main title
 
-tagline: 아는만큼 보인다. # it will display as the subtitle
+tagline: There are no solutions. There are only trade-offs. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   kotlin, spring, jpa, etc
