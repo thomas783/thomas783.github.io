@@ -1,7 +1,7 @@
 ---
 title: StringBuilder And StringBuffer
 date: 2025-02-26 23:36:00 +09:00
-last_modified_at: 2025-02-26 23:36:00 +09:00
+last_modified_at: 2025-02-27 09:45:00 +09:00
 categories: [ Programming, Kotlin ]
 tags:
   [
@@ -61,4 +61,5 @@ str += " World"
 | Synchronized | Yes         | No            | Yes          |
 | Performance  | High        | High          | Low          |
 
-** JDK 7 이후로는 `Heap` 영역으로 변경되었고 이전에는 `PermGen` 영역에 저장되었다고 한다.
+** String Pool의 위치는 JDK 7 버전 이후로는 `Heap` 메모리 영역으로 변경되었고 이전에는 `PermGen(Permanent Generation)` 
+메모리 영역에 저장되었다고 한다.
