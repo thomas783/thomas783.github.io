@@ -17,6 +17,9 @@ script_includes:
 <article class="px-1" data-toc="{{ enable_toc }}">
   <header>
     <h1 data-toc-skip>{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <div class="fs-5 text-muted mb-3">{{ page.subtitle }}</div>
+    {% endif %}
     {% if page.description %}
       <p class="post-desc fw-light mb-4">{{ page.description }}</p>
     {% endif %}
