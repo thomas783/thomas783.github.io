@@ -1,7 +1,7 @@
 ---
 title: Error vs Exception
 date: 2025-01-15 16:00:00 +09:00
-last_modified_at: 2025-01-19 01:49:00 +09:00
+last_modified_at: 2025-08-31 22:50:00 +09:00
 categories: [Programming, Kotlin]
 tags:
   [
@@ -16,7 +16,7 @@ tags:
 image: "/assets/img/title/kotlin-logo.png"
 ---
 
-> 최근 Exeption과 Error의 차이에 대한 글을 보고 한번은 정리하고 가면 좋겠다는 생각이 들어 작성하게 되었습니다.
+> 최근 Exception과 Error의 차이에 대한 글을 보고 한번은 정리하고 가면 좋겠다는 생각이 들어 작성하게 되었습니다.
 > [해당 글](https://medium.com/@junfeng0828/b44b07823f72)
 
 ## Exception vs Error in Kotlin
